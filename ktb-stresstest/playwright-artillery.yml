@@ -1,0 +1,17 @@
+config:
+  target: https://ktb-chat-test.goorm.team
+
+  phases:
+  - duration: 1
+    arrivalRate: 1
+
+  engines:
+    playwright:
+      launchOptions:
+        headless: true
+    
+  processor: "./stresstest/app.js"
+
+scenarios:
+  - engine: playwright
+    flowFunction: "createNewChat" 
